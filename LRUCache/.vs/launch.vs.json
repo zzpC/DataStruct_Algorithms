@@ -1,0 +1,22 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "cppdbg",
+      "name": "C:\\Users\\a1348\\Documents\\GitHub\\DataStruct_Algorithms\\LRUCache",
+      "project": "",
+      "cwd": "${workspaceRoot}",
+      "program": "${debugInfo.target}",
+      "processId": "0",
+      "MIMode": "gdb",
+      "miDebuggerPath": "${env.MINGW_PREFIX}\\bin\\gdb.exe",
+      "externalConsole": true
+    },
+    {
+      "type": "native",
+      "name": "C:\\Users\\a1348\\Documents\\GitHub\\DataStruct_Algorithms\\LRUCache(1)",
+      "project": ""
+    }
+  ]
+}

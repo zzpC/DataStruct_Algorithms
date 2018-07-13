@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/a1348/Documents/GitHub/ACMTranning/untitled/lrucache.cpp
+lrucache.h
+C:/Users/a1348/Documents/GitHub/ACMTranning/untitled/lrucache.h
+
+C:/Users/a1348/Documents/GitHub/ACMTranning/untitled/lrucache.h
+

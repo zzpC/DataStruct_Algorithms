@@ -1,0 +1,3 @@
+C:/Users/a1348/Documents/GitHub/ACMTranning/build-untitled-Desktop_Qt_5_11_0_MinGW_32bit-Default/CMakeFiles/edit_cache.dir
+C:/Users/a1348/Documents/GitHub/ACMTranning/build-untitled-Desktop_Qt_5_11_0_MinGW_32bit-Default/CMakeFiles/untitled.dir
+C:/Users/a1348/Documents/GitHub/ACMTranning/build-untitled-Desktop_Qt_5_11_0_MinGW_32bit-Default/CMakeFiles/rebuild_cache.dir
