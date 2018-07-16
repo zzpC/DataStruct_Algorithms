@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
 public:
 	int minPrice(vector<vector<int>> prices) {
-		if (prices.size() == 0) {
+		if (prices.empty()) {
 			return 0;
 		}
 		
@@ -28,9 +28,6 @@ public:
 			}
 		}
 
-		if (prices.size() == 1) {
-			return a0;
-		}
 		if (prices.size() >= 2) {
 			int b0, b1, n0, n1;
 			b0 = INT_MAX;
@@ -79,8 +76,8 @@ public:
 					}
 				}
 			}
-			return a0;
 		}
+		return a0;
 	};
 
 };
