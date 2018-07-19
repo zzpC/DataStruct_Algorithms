@@ -20,6 +20,25 @@ public:
 						continue;
 					}
 
+					bool flag=false;
+					while(nums[i]==nums[k] && nums[j]==nums[k]){
+						if(nums[i]==0){
+							flag=true;
+						}
+						if(nums[i]==nums[k] && nums[j]==nums[k]){
+							if(k+1<nums.size()){
+								++i;
+								++j;
+								++k;
+							}
+						}
+						
+					}
+					if(flag){
+						vector<int> tempvec={0,0,0};
+						res.push_back(tempvec);
+					}
+
 					vector<int> tempvec;
 					int temp=nums[i]+nums[j];
 					if(nums[k]+temp==0){
@@ -46,7 +65,7 @@ public:
 int main(){
 	Solution s;
 	vector<int> vec={-1, 0, 1, 2, -1, -4};
-	vector<vector<int>> test={{-1, 0, 1, 2, -1, -4},{-2},{-1,-3,-2},{12,5,9},{2,3,-4,-5},{0,0,0,0}};
+	vector<vector<int>> test={{-1, 0, 1, 2, -1, -4},{-2},{-1,-3,-2},{12,5,9},{2,3,-4,-5},{0,0,0,0},{-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6}};
 	for(vector<int>& v:test){
 		cout << "开始测试一组数据: " << endl;
 		vector<vector<int>> res=s.threeSum(v);
