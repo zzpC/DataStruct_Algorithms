@@ -31,7 +31,7 @@ int main(){
 		{1,0,5}};
 
 	for(vector<int>& v : test){
-		cout << "¿ªÊ¼²âÊÔ:  ";
+		cout << "å¼€å§‹æµ‹è¯•:  ";
 		cout << s.canJump(v) << endl << endl;
 	}
 	return 0;
