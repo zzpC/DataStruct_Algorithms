@@ -7,60 +7,31 @@ using namespace std;
 class Solution {
 public:
 	int coinChange(vector<int>& coins, int amount) {
-		int res = 0;
-		sort(coins.begin(), coins.end());
-
-		res = coinCore(coins, 0, coins.size() - 1, amount);
-		
-
-
-
-		return res;
-	}
-
-	int coinCore(vector<int>& coins, int ahead,int behind, int amount) {
-		if (ahead == behind ) {
-			if (coins[ahead] == amount) {
-				return 1;
-			}else{
-				return INT_MIN;
+		vector<int> arr(amount + 1, -1);
+		arr[0] = 0;
+		for (int& i : coins) {
+			if (i <= amount) {
+				arr[i] = 1;
 			}
 		}
-		else if (ahead > behind) {
-			return INT_MIN;
-		}
-		int temp = 0;
-		if (coins[ahead] + coins[behind] < amount) {
-			temp= coinCore(coins, ahead + 1, behind,amount-coins[ahead])+1;
-		}
-		else if (coins[ahead] + coins[behind] == amount) {
-			temp = 2;
-		}
-		else
-		{
-			temp = coinCore(coins, ahead, behind-1, amount-coins[behind]);
-		}
 
-		int temp2 = coinCore(coins, ahead, behind - 1, amount);
-		if (temp > 0 && temp2 > 0) {
-			return temp > temp2 ? temp2 : temp;
-		
-		}
-		else {
-			if (temp < 0 && temp2 < 0) {
-				return -1;
+		for (int i = 1; i <= amount; i++) {
+			//int last = INT_MAX;
+			if (arr[i] == 1) {
+				continue;
 			}
-			else {
-				if (temp > 0) {
-					return temp;
-				}
-				else {
-					return temp2;
+			for (int j = coins.size() - 1; j >= 0; j--) {
+				// arr[i-coins[j]]>0 是为了筛选有效数据,不存在的组合值为-1
+				if (coins[j] <= i && arr[i-coins[j]]>0) {
+					int temp = arr[i - coins[j]] + 1;
+					if (arr[i]==-1 || arr[i]>temp) {
+						arr[i] = temp;
+					}					
 				}
 			}
 		}
-		return temp;
- 
+
+		return arr[amount];
 	}
 };
 int main(int argc, char* argv[])
@@ -68,7 +39,6 @@ int main(int argc, char* argv[])
 	vector<int> vec = { 1,2,5 };
 	Solution s;
 	cout << s.coinChange(vec, 11) << endl;
-	system("pause");
 	return 0;
 }
 
